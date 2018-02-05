@@ -3,39 +3,56 @@ using System.Threading;
 
 namespace Day2Workshop
 {
-    class QuestionC06
+    class QuestionC02
     {
         static void Main()
         {
-            int onesecond = 1000;
+            int twoseconds = 2000;
 
-            Console.Write("Please type in a three digit number: ");
-            string input = Console.ReadLine();
+            Console.Write("Hello there, what is your name: ");
+            string nameinput = Console.ReadLine();
+            Console.Write("How old are you: ");
+            string ageinput = Console.ReadLine();
+            Console.Write("Please indicate your gender, M/F: ");
+            string genderinput = Console.ReadLine();
 
-            int num = Int32.Parse(input);
+            int age = Int32.Parse(ageinput);
 
-            Thread.Sleep(onesecond);
-            Console.WriteLine("\n************************************");
-            Console.WriteLine("\nInput detected, one moment please...");
-            Thread.Sleep(onesecond);
+            Console.WriteLine("\n******************");
+            Console.WriteLine("\nOne moment please...");
 
-            int num1 = num / 100;   //integer division
-            int num2 = (num % 100) / 10;
-            int num3 = num % 10;
+            Thread.Sleep(twoseconds);
 
-            int num13 = num1 * num1 * num1;
-            int num23 = num2 * num2 * num2;
-            int num33 = num3 * num3 * num3;
-            int sum = num13 + num23 + num33;
-
-            if (sum == num)
+            if (age < 40)
             {
-                    Console.WriteLine("\nThe number {0} is an Armstrong number, yay!", num); 
+                if (genderinput == "M")
+                {
+                    Console.WriteLine("\n******************");
+                    Console.WriteLine("\nGood morning Mr.{0}", nameinput);
+                }
+
+                else
+                {
+                    Console.WriteLine("\n******************");
+                    Console.WriteLine("\nGood morning Ms.{0}", nameinput);
+                }
             }
+
             else
             {
-                    Console.WriteLine("\nThe number {0} isn't an Armstrong number, awwwwww...", num);
+                if (genderinput == "M")
+                {
+                    Console.WriteLine("\n******************");
+                    Console.WriteLine("\nGood morning Uncle {0}", nameinput);
+                }
+
+                else
+                {
+                    Console.WriteLine("\n******************");
+                    Console.WriteLine("\nGood morning Aunty {0}", nameinput);
+                }
             }
+           
 
         }
     }
